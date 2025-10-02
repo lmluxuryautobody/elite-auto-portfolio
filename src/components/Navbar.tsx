@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<"en" | "es">("en");
+  const { language, toggleLanguage, t } = useLanguage();
   const location = useLocation();
 
   useEffect(() => {
@@ -18,16 +19,12 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: language === "en" ? "Home" : "Inicio", path: "/" },
-    { name: language === "en" ? "About" : "Nosotros", path: "/about" },
-    { name: language === "en" ? "Services" : "Servicios", path: "/services" },
-    { name: language === "en" ? "Contact" : "Contacto", path: "/contact" },
-    { name: language === "en" ? "Cars for Sale" : "Autos en Venta", path: "/cars" },
+    { name: t("nav.home"), path: "/" },
+    { name: t("nav.about"), path: "/about" },
+    { name: t("nav.services"), path: "/services" },
+    { name: t("nav.contact"), path: "/contact" },
+    { name: t("nav.cars"), path: "/cars" },
   ];
-
-  const toggleLanguage = () => {
-    setLanguage(language === "en" ? "es" : "en");
-  };
 
   return (
     <nav
@@ -77,7 +74,7 @@ const Navbar = () => {
             <a href="tel:+1234567890">
               <Button variant="luxury" size="lg" className="hidden md:inline-flex">
                 <Phone className="h-5 w-5" />
-                {language === "en" ? "Call for Free Estimate" : "Llame para Presupuesto Gratis"}
+                {t("nav.call")}
               </Button>
             </a>
 
@@ -95,8 +92,10 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 animate-fade-in">
-            <div className="flex flex-col space-y-4">
+          <>
+            <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden" onClick={() => setIsMobileMenuOpen(false)} />
+            <div className="lg:hidden py-4 animate-fade-in relative z-50">
+              <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
@@ -109,14 +108,15 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <a href="tel:+1234567890" className="pt-2">
-                <Button variant="luxury" size="lg" className="w-full">
-                  <Phone className="h-5 w-5" />
-                  {language === "en" ? "Call Now" : "Llame Ahora"}
-                </Button>
-              </a>
+                <a href="tel:+1234567890" className="pt-2">
+                  <Button variant="luxury" size="lg" className="w-full">
+                    <Phone className="h-5 w-5" />
+                    {t("nav.callNow")}
+                  </Button>
+                </a>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </nav>

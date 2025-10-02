@@ -1,45 +1,78 @@
 import { Phone, CheckCircle, Shield, Wrench, Sparkles, Car, PaintBucket, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 import beforeAfterImage from "@/assets/before-after.jpg";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
       icon: Car,
-      title: "Collision Repair",
-      description: "Complete collision repair services using factory-certified techniques and genuine parts.",
-      features: ["Frame straightening", "Structural repairs", "Safety system recalibration", "Unibody repair"],
+      title: t("services.collision.title"),
+      description: t("services.collision.desc"),
+      features: [
+        t("services.collision.feature1"),
+        t("services.collision.feature2"),
+        t("services.collision.feature3"),
+        t("services.collision.feature4"),
+      ],
     },
     {
       icon: PaintBucket,
-      title: "Paint & Refinishing",
-      description: "Professional automotive painting with computerized color matching for a perfect finish.",
-      features: ["Custom paint jobs", "Color matching", "Clear coat protection", "Paintless options"],
+      title: t("services.paint.title"),
+      description: t("services.paint.desc"),
+      features: [
+        t("services.paint.feature1"),
+        t("services.paint.feature2"),
+        t("services.paint.feature3"),
+        t("services.paint.feature4"),
+      ],
     },
     {
       icon: Wrench,
-      title: "Dent Removal",
-      description: "Expert dent repair services including paintless dent removal (PDR) techniques.",
-      features: ["Paintless dent repair", "Hail damage repair", "Door ding removal", "Panel replacement"],
+      title: t("services.dent.title"),
+      description: t("services.dent.desc"),
+      features: [
+        t("services.dent.feature1"),
+        t("services.dent.feature2"),
+        t("services.dent.feature3"),
+        t("services.dent.feature4"),
+      ],
     },
     {
       icon: Sparkles,
-      title: "Detailing & Protection",
-      description: "Premium detailing services to keep your vehicle looking showroom new.",
-      features: ["Ceramic coating", "Paint protection film", "Interior detailing", "Engine detailing"],
+      title: t("services.detailing.title"),
+      description: t("services.detailing.desc"),
+      features: [
+        t("services.detailing.feature1"),
+        t("services.detailing.feature2"),
+        t("services.detailing.feature3"),
+        t("services.detailing.feature4"),
+      ],
     },
     {
       icon: Shield,
-      title: "Insurance Claims",
-      description: "We work directly with all major insurance companies to streamline your claim process.",
-      features: ["Direct billing", "Claims assistance", "Rental coordination", "All insurers accepted"],
+      title: t("services.insurance.title"),
+      description: t("services.insurance.desc"),
+      features: [
+        t("services.insurance.feature1"),
+        t("services.insurance.feature2"),
+        t("services.insurance.feature3"),
+        t("services.insurance.feature4"),
+      ],
     },
     {
       icon: Gauge,
-      title: "Custom Modifications",
-      description: "Personalize your vehicle with our custom modification and enhancement services.",
-      features: ["Body kit installation", "Custom graphics", "Performance upgrades", "Wheels & suspension"],
+      title: t("services.custom.title"),
+      description: t("services.custom.desc"),
+      features: [
+        t("services.custom.feature1"),
+        t("services.custom.feature2"),
+        t("services.custom.feature3"),
+        t("services.custom.feature4"),
+      ],
     },
   ];
 
@@ -49,14 +82,14 @@ const Services = () => {
       <section className="relative py-20 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">{t("services.hero.title")}</h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8">
-              Comprehensive auto body repair and restoration services for all makes and models
+              {t("services.hero.subtitle")}
             </p>
             <a href="tel:+1234567890">
               <Button variant="luxury" size="xl">
                 <Phone className="h-6 w-6" />
-                Get Free Estimate
+                {t("services.hero.cta")}
               </Button>
             </a>
           </div>
@@ -70,13 +103,13 @@ const Services = () => {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="p-8 hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 hover:border-accent animate-fade-in"
+                className="p-8 hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 hover:border-accent animate-fade-in flex flex-col"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <service.icon className="h-12 w-12 text-accent mb-4" />
                 <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
                 <p className="text-muted-foreground mb-4">{service.description}</p>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-6 flex-grow">
                   {service.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent mr-2 mt-0.5 flex-shrink-0" />
@@ -84,6 +117,12 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
+                <a href="tel:+1234567890" className="mt-auto">
+                  <Button variant="luxury" size="sm" className="w-full">
+                    <Phone className="h-4 w-4" />
+                    {t("services.hero.cta")}
+                  </Button>
+                </a>
               </Card>
             ))}
           </div>
@@ -94,9 +133,9 @@ const Services = () => {
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Work Speaks for Itself</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("services.showcase.title")}</h2>
             <p className="text-xl text-muted-foreground">
-              See the incredible transformations we achieve every day
+              {t("services.showcase.subtitle")}
             </p>
           </div>
 
@@ -109,15 +148,15 @@ const Services = () => {
               />
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div className="text-center p-6 bg-white rounded-lg">
-                  <h3 className="text-xl font-bold mb-2">Before</h3>
+                  <h3 className="text-xl font-bold mb-2">{t("services.showcase.before")}</h3>
                   <p className="text-muted-foreground">
-                    Significant collision damage requiring extensive bodywork
+                    {t("services.showcase.beforeDesc")}
                   </p>
                 </div>
                 <div className="text-center p-6 bg-white rounded-lg">
-                  <h3 className="text-xl font-bold mb-2">After</h3>
+                  <h3 className="text-xl font-bold mb-2">{t("services.showcase.after")}</h3>
                   <p className="text-muted-foreground">
-                    Flawless restoration to factory-perfect condition
+                    {t("services.showcase.afterDesc")}
                   </p>
                 </div>
               </div>
@@ -130,9 +169,9 @@ const Services = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Process</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("services.process.title")}</h2>
             <p className="text-xl text-muted-foreground">
-              Simple, transparent, and designed for your convenience
+              {t("services.process.subtitle")}
             </p>
           </div>
 
@@ -140,23 +179,23 @@ const Services = () => {
             {[
               {
                 step: "01",
-                title: "Free Estimate",
-                description: "Call us for a no-obligation free estimate on your repair",
+                title: t("services.process.step1"),
+                description: t("services.process.step1Desc"),
               },
               {
                 step: "02",
-                title: "Inspection",
-                description: "Thorough inspection and detailed repair plan development",
+                title: t("services.process.step2"),
+                description: t("services.process.step2Desc"),
               },
               {
                 step: "03",
-                title: "Repair Work",
-                description: "Expert technicians restore your vehicle to perfection",
+                title: t("services.process.step3"),
+                description: t("services.process.step3Desc"),
               },
               {
                 step: "04",
-                title: "Quality Check",
-                description: "Final inspection and quality assurance before delivery",
+                title: t("services.process.step4"),
+                description: t("services.process.step4Desc"),
               },
             ].map((item, index) => (
               <div
@@ -178,14 +217,14 @@ const Services = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-accent to-accent/80 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Restore Your Vehicle?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t("services.cta.title")}</h2>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Get your free estimate today and experience the L&M difference
+            {t("services.cta.subtitle")}
           </p>
           <a href="tel:+1234567890">
             <Button variant="luxury-outline" size="xl" className="border-white text-white hover:bg-white hover:text-accent">
               <Phone className="h-6 w-6" />
-              Call Now for Free Estimate
+              {t("services.cta.button")}
             </Button>
           </a>
         </div>
