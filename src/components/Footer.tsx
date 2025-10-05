@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-primary text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -13,41 +16,40 @@ const Footer = () => {
                 <span className="text-2xl font-bold text-accent-foreground">L&M</span>
               </div> */}
               <div>
-                <h3 className="text-xl font-bold">L&M Luxury</h3>
-                <p className="text-sm text-accent">Auto Body Shop</p>
+                <h3 className="text-xl font-bold">{t("footer.company")}</h3>
+                <p className="text-sm text-accent">{t("footer.subtitle")}</p>
               </div>
             </div>
             <p className="text-muted-foreground text-sm">
-              Professional auto body repair and restoration with over 20 years of experience. Quality
-              work guaranteed.
+              {t("footer.description")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.quickLinks")}</h4>
             <div className="space-y-2">
-              <Link to="/" className="block text-muted-foreground hover:text-accent transition-colors">
-                Home
+              <Link to="/" className="block text-muted-foreground hover:text-accent transition-colors" onClick={() => window.scrollTo(0, 0)}>
+                {t("nav.home")}
               </Link>
-              <Link to="/about" className="block text-muted-foreground hover:text-accent transition-colors">
-                About Us
+              <Link to="/about" className="block text-muted-foreground hover:text-accent transition-colors" onClick={() => window.scrollTo(0, 0)}>
+                {t("nav.about")}
               </Link>
-              <Link to="/services" className="block text-muted-foreground hover:text-accent transition-colors">
-                Services
+              <Link to="/services" className="block text-muted-foreground hover:text-accent transition-colors" onClick={() => window.scrollTo(0, 0)}>
+                {t("nav.services")}
               </Link>
-              <Link to="/contact" className="block text-muted-foreground hover:text-accent transition-colors">
-                Contact
+              <Link to="/contact" className="block text-muted-foreground hover:text-accent transition-colors" onClick={() => window.scrollTo(0, 0)}>
+                {t("nav.contact")}
               </Link>
-              <Link to="/cars" className="block text-muted-foreground hover:text-accent transition-colors">
-                Cars for Sale
+              <Link to="/cars" className="block text-muted-foreground hover:text-accent transition-colors" onClick={() => window.scrollTo(0, 0)}>
+                {t("nav.cars")}
               </Link>
             </div>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.contact")}</h4>
             <div className="space-y-3">
               <a href="tel:+17869735376" className="flex items-center space-x-3 text-muted-foreground hover:text-accent transition-colors">
                 <Phone className="h-5 w-5 text-accent" />
@@ -66,11 +68,11 @@ const Footer = () => {
 
           {/* Business Hours & Social */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Business Hours</h4>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.hours")}</h4>
             <div className="space-y-2 text-muted-foreground text-sm mb-6">
-              <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-              <p>Saturday: 9:00 AM - 4:00 PM</p>
-              <p>Sunday: Closed</p>
+              <p>{t("footer.hours.monFri")}</p>
+              <p>{t("footer.hours.sat")}</p>
+              <p>{t("footer.hours.sun")}</p>
             </div>
             <div className="flex space-x-4">
               <a
@@ -95,7 +97,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-secondary pt-8 text-center text-muted-foreground text-sm">
-          <p>&copy; {new Date().getFullYear()} L&M Luxury Auto Body Shop. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {t("footer.copyright")}</p>
         </div>
       </div>
     </footer>
