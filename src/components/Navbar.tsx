@@ -36,9 +36,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center transform transition-transform group-hover:scale-110">
+            {/* <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center transform transition-transform group-hover:scale-110">
               <span className="text-2xl font-bold text-accent-foreground">L&M</span>
-            </div>
+            </div> */}
             <div className="hidden md:block">
               <h1 className="text-xl font-bold text-white">L&M Luxury</h1>
               <p className="text-xs text-accent">Auto Body Shop</p>
@@ -71,7 +71,7 @@ const Navbar = () => {
               <Globe className="h-5 w-5" />
             </Button>
 
-            <a href="tel:+1234567890">
+            <a href="tel:+17869735376">
               <Button variant="luxury" size="lg" className="hidden md:inline-flex">
                 <Phone className="h-5 w-5" />
                 {t("nav.call")}
@@ -108,7 +108,7 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-                <a href="tel:+1234567890" className="pt-2">
+                <a href="tel:+17869735376" className="pt-2">
                   <Button variant="luxury" size="lg" className="w-full">
                     <Phone className="h-5 w-5" />
                     {t("nav.callNow")}

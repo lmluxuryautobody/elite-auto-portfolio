@@ -62,16 +62,16 @@ const CarsForSale = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-primary text-white">
+      <section className="relative py-32 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Luxury Cars for Sale</h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8">
               Premium pre-owned vehicles, all professionally inspected and serviced
             </p>
-            <a href="tel:+1234567890">
+            <a href="tel:+17869735376">
               <Button variant="luxury" size="xl">
                 <Phone className="h-6 w-6" />
                 Call to Inquire
@@ -139,7 +139,7 @@ const CarsForSale = () => {
                     </ul>
                   </div>
 
-                  <a href="tel:+1234567890" className="block">
+                  <a href="tel:+17869735376" className="block">
                     <Button variant="luxury" size="lg" className="w-full">
                       <Phone className="h-5 w-5" />
                       Call to Inquire
@@ -199,7 +199,7 @@ const CarsForSale = () => {
             Come see our current inventory in person. Schedule a test drive today!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+1234567890">
+            <a href="tel:+17869735376">
               <Button variant="luxury-outline" size="xl" className="border-white text-white hover:bg-white hover:text-accent">
                 <Phone className="h-6 w-6" />
                 Call to Schedule

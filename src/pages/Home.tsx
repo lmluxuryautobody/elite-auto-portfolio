@@ -73,7 +73,7 @@ const Home = () => {
             {t("home.hero.description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-            <a href="tel:+1234567890">
+            <a href="tel:+17869735376">
               <Button variant="luxury" size="xl" className="text-lg">
                 <Phone className="h-6 w-6" />
                 {t("home.hero.cta")}
@@ -109,7 +109,7 @@ const Home = () => {
                 <service.icon className="h-12 w-12 text-accent mb-4" />
                 <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                 <p className="text-muted-foreground mb-6 flex-grow">{service.description}</p>
-                <a href="tel:+1234567890" className="mt-auto">
+                <a href="tel:+17869735376" className="mt-auto">
                   <Button variant="luxury" size="sm" className="w-full">
                     <Phone className="h-4 w-4" />
                     {t("home.services.cta")}
@@ -194,7 +194,7 @@ const Home = () => {
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
             {t("home.guarantee.description")}
           </p>
-          <a href="tel:+1234567890">
+          <a href="tel:+17869735376">
             <Button variant="luxury-outline" size="xl" className="border-white text-white hover:bg-white hover:text-accent">
               <Phone className="h-6 w-6" />
               {t("home.guarantee.cta")}

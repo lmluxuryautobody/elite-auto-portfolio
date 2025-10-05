@@ -4,9 +4,9 @@ import { Card } from "@/components/ui/card";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-primary text-white">
+      <section className="relative py-32 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
@@ -24,16 +24,16 @@ const Contact = () => {
             <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in">
               <Phone className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Phone</h3>
-              <a href="tel:+1234567890" className="text-muted-foreground hover:text-accent transition-colors">
-                (123) 456-7890
+              <a href="tel:+17869735376" className="text-muted-foreground hover:text-accent transition-colors">
+                (786) 973-5376
               </a>
             </Card>
 
             <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: "100ms" }}>
               <Mail className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Email</h3>
-              <a href="mailto:info@lmluxuryauto.com" className="text-muted-foreground hover:text-accent transition-colors">
-                info@lmluxuryauto.com
+              <a href="mailto:osman11@me.com" className="text-muted-foreground hover:text-accent transition-colors">
+                osman11@me.com
               </a>
             </Card>
 
@@ -41,9 +41,7 @@ const Contact = () => {
               <MapPin className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Address</h3>
               <p className="text-muted-foreground">
-                123 Auto Street
-                <br />
-                Los Angeles, CA 90001
+                2456 NW 77th Terrace<br />Miami FL 33147
               </p>
             </Card>
 
@@ -103,7 +101,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              <a href="tel:+1234567890">
+              <a href="tel:+17869735376">
                 <Button variant="luxury" size="xl">
                   <Phone className="h-6 w-6" />
                   Call for Free Estimate
@@ -122,13 +120,13 @@ const Contact = () => {
             No obligation, no hidden fees. Get an honest assessment of your vehicle's repair needs today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+1234567890">
+            <a href="tel:+17869735376">
               <Button variant="luxury-outline" size="xl" className="border-white text-white hover:bg-white hover:text-accent">
                 <Phone className="h-6 w-6" />
                 Call Now
               </Button>
             </a>
-            <a href="mailto:info@lmluxuryauto.com">
+            <a href="mailto:osman11@me.com">
               <Button variant="luxury-outline" size="xl" className="border-white text-white hover:bg-white hover:text-accent">
                 <Mail className="h-6 w-6" />
                 Email Us

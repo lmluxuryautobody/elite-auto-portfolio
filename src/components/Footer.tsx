@@ -9,9 +9,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+              {/* <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
                 <span className="text-2xl font-bold text-accent-foreground">L&M</span>
-              </div>
+              </div> */}
               <div>
                 <h3 className="text-xl font-bold">L&M Luxury</h3>
                 <p className="text-sm text-accent">Auto Body Shop</p>
@@ -49,17 +49,17 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <div className="space-y-3">
-              <a href="tel:+1234567890" className="flex items-center space-x-3 text-muted-foreground hover:text-accent transition-colors">
+              <a href="tel:+17869735376" className="flex items-center space-x-3 text-muted-foreground hover:text-accent transition-colors">
                 <Phone className="h-5 w-5 text-accent" />
-                <span>(123) 456-7890</span>
+                <span>(786) 973-5376</span>
               </a>
-              <a href="mailto:info@lmluxuryauto.com" className="flex items-center space-x-3 text-muted-foreground hover:text-accent transition-colors">
+              <a href="mailto:osman11@me.com" className="flex items-center space-x-3 text-muted-foreground hover:text-accent transition-colors">
                 <Mail className="h-5 w-5 text-accent" />
-                <span>info@lmluxuryauto.com</span>
+                <span>osman11@me.com</span>
               </a>
               <div className="flex items-start space-x-3 text-muted-foreground">
                 <MapPin className="h-5 w-5 text-accent mt-1" />
-                <span>123 Auto Street<br />Los Angeles, CA 90001</span>
+                <span>2456 NW 77th Terrace<br />Miami FL 33147</span>
               </div>
             </div>
           </div>
