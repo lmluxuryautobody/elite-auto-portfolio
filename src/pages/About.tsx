@@ -40,7 +40,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-32 bg-primary text-white">
+      <section className="relative pt-32 pb-24 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">{t("about.hero.title")}</h1>
@@ -78,7 +78,7 @@ const About = () => {
       <section className="py-20 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("about.stats.title")}</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">{t("about.stats.title")}</h2>
             <p className="text-xl text-white/80">{t("about.stats.subtitle")}</p>
           </div>
 
@@ -95,7 +95,7 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("about.values.title")}</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">{t("about.values.title")}</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               {t("about.values.subtitle")}
             </p>
@@ -105,7 +105,7 @@ const About = () => {
             {values.map((value, index) => (
               <Card
                 key={index}
-                className="p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 hover:border-accent animate-fade-in"
+                className="p-8 text-center hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <value.icon className="h-16 w-16 text-accent mx-auto mb-4" />

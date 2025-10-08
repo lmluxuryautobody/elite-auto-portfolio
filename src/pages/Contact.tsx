@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-32 bg-primary text-white">
+      <section className="relative pt-32 pb-24 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">{t("contact.hero.title")}</h1>
@@ -24,7 +24,7 @@ const Contact = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in">
+            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 animate-fade-in">
               <Phone className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">{t("contact.phone")}</h3>
               <a href="tel:+17869735376" className="text-muted-foreground hover:text-accent transition-colors">
@@ -32,7 +32,7 @@ const Contact = () => {
               </a>
             </Card>
 
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: "100ms" }}>
+            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 animate-fade-in" style={{ animationDelay: "100ms" }}>
               <Mail className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">{t("contact.email")}</h3>
               <a href="mailto:osman11@me.com" className="text-muted-foreground hover:text-accent transition-colors">
@@ -40,7 +40,7 @@ const Contact = () => {
               </a>
             </Card>
 
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: "200ms" }}>
+            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 animate-fade-in" style={{ animationDelay: "200ms" }}>
               <MapPin className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">{t("contact.address")}</h3>
               <p className="text-muted-foreground">
@@ -48,7 +48,7 @@ const Contact = () => {
               </p>
             </Card>
 
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: "300ms" }}>
+            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 animate-fade-in" style={{ animationDelay: "300ms" }}>
               <Clock className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">{t("contact.hours")}</h3>
               <p className="text-muted-foreground text-sm">
