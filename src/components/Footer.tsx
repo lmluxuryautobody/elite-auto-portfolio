@@ -79,7 +79,7 @@ const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
+                className="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </a>
@@ -87,7 +87,7 @@ const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
+                className="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>

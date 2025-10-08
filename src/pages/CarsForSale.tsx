@@ -98,7 +98,7 @@ const CarsForSale = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-32 bg-primary text-white">
+      <section className="relative pt-32 pb-24 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">{t("cars.hero.title")}</h1>
@@ -122,7 +122,7 @@ const CarsForSale = () => {
             {cars.map((car, index) => (
               <Card
                 key={index}
-                className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in"
+                className="overflow-hidden hover:shadow-2xl transition-all duration-300 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Swipeable Image Carousel */}
@@ -201,14 +201,14 @@ const CarsForSale = () => {
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("cars.why.title")}</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">{t("cars.why.title")}</h2>
             <p className="text-xl text-muted-foreground">
               {t("cars.why.subtitle")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in">
+            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 animate-fade-in">
               <Shield className="h-16 w-16 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-3">{t("cars.why.inspected")}</h3>
               <p className="text-muted-foreground">
@@ -216,7 +216,7 @@ const CarsForSale = () => {
               </p>
             </Card>
 
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: "100ms" }}>
+            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 animate-fade-in" style={{ animationDelay: "100ms" }}>
               <Award className="h-16 w-16 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-3">{t("cars.why.history")}</h3>
               <p className="text-muted-foreground">
@@ -224,7 +224,7 @@ const CarsForSale = () => {
               </p>
             </Card>
 
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: "200ms" }}>
+            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 animate-fade-in" style={{ animationDelay: "200ms" }}>
               <CheckCircle className="h-16 w-16 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-3">{t("cars.why.guarantee")}</h3>
               <p className="text-muted-foreground">

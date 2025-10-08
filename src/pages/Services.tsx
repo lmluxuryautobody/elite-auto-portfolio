@@ -79,7 +79,7 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-32 bg-primary text-white">
+      <section className="relative pt-32 pb-24 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">{t("services.hero.title")}</h1>
@@ -103,7 +103,7 @@ const Services = () => {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="p-8 hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 hover:border-accent animate-fade-in flex flex-col"
+                className="p-8 hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent animate-fade-in flex flex-col"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <service.icon className="h-12 w-12 text-accent mb-4" />
@@ -133,7 +133,7 @@ const Services = () => {
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("services.showcase.title")}</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">{t("services.showcase.title")}</h2>
             <p className="text-xl text-muted-foreground">
               {t("services.showcase.subtitle")}
             </p>
@@ -146,20 +146,6 @@ const Services = () => {
                 alt="Before and after repair"
                 className="w-full rounded-lg shadow-2xl"
               />
-              <div className="grid md:grid-cols-2 gap-8 mt-8">
-                <div className="text-center p-6 bg-white rounded-lg">
-                  <h3 className="text-xl font-bold mb-2">{t("services.showcase.before")}</h3>
-                  <p className="text-muted-foreground">
-                    {t("services.showcase.beforeDesc")}
-                  </p>
-                </div>
-                <div className="text-center p-6 bg-white rounded-lg">
-                  <h3 className="text-xl font-bold mb-2">{t("services.showcase.after")}</h3>
-                  <p className="text-muted-foreground">
-                    {t("services.showcase.afterDesc")}
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -169,7 +155,7 @@ const Services = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("services.process.title")}</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">{t("services.process.title")}</h2>
             <p className="text-xl text-muted-foreground">
               {t("services.process.subtitle")}
             </p>
