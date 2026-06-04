@@ -272,7 +272,7 @@ const translations = {
     // Footer
     "footer.company": "L&M Luxury",
     "footer.subtitle": "Auto Body Shop",
-    "footer.description": "Professional auto body repair and restoration with over 20 years of experience. Quality work guaranteed.",
+    "footer.description": "Miami's go-to shop for collision repair, paint, and bodywork. Family owned and trusted by South Florida drivers for over 20 years.",
     "footer.quickLinks": "Quick Links",
     "footer.contact": "Contact Us",
     "footer.hours": "Business Hours",
@@ -543,7 +543,7 @@ const translations = {
     // Footer
     "footer.company": "L&M Luxury",
     "footer.subtitle": "Taller de Carrocería",
-    "footer.description": "Reparación y restauración profesional de carrocería con más de 20 años de experiencia. Trabajo de calidad garantizado.",
+    "footer.description": "El taller de confianza en Miami para colisiones, pintura y carrocería. Negocio familiar al servicio de conductores del sur de Florida por más de 20 años.",
     "footer.quickLinks": "Enlaces Rápidos",
     "footer.contact": "Contáctenos",
     "footer.hours": "Horario de Atención",
