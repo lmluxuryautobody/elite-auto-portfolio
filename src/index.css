@@ -2,93 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* L&M Luxury Auto Body — Design System. All colors HSL. */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --foreground: 0 0% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 0 0% 9%;
 
-    --primary: 0 0% 10%;
+    --primary: 0 0% 7%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary-foreground: 0 0% 9%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 0 84% 50%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 0 74% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 74% 45%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 0 84% 50%;
+    --ring: 0 74% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Luxury theme colors */
-    --luxury-black: 0 0% 8%;
-    --luxury-charcoal: 0 0% 15%;
-    --luxury-red: 0 84% 50%;
-    --luxury-red-dark: 0 84% 40%;
+    /* Luxury palette */
+    --luxury-black: 0 0% 5%;
+    --luxury-charcoal: 0 0% 11%;
+    --luxury-charcoal-light: 0 0% 16%;
+    --luxury-red: 0 74% 45%;
+    --luxury-red-bright: 0 84% 55%;
     --luxury-gray: 0 0% 45%;
-    --luxury-light: 0 0% 98%;
+    --luxury-platinum: 0 0% 82%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 8% / 0.95), hsl(0 0% 15% / 0.9));
-    --gradient-red: linear-gradient(135deg, hsl(0 84% 50%), hsl(0 84% 40%));
-    --gradient-overlay: linear-gradient(180deg, transparent, hsl(0 0% 8% / 0.8));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 4% / 0.55) 0%, hsl(0 0% 4% / 0.7) 55%, hsl(0 0% 4% / 0.96) 100%);
+    --gradient-dark: linear-gradient(150deg, hsl(0 0% 9%) 0%, hsl(0 0% 5%) 100%);
+    --gradient-red: linear-gradient(135deg, hsl(0 84% 50%), hsl(0 74% 40%));
+    --gradient-red-glow: radial-gradient(circle at 50% 0%, hsl(0 84% 50% / 0.25), transparent 60%);
+    --gradient-card: linear-gradient(160deg, hsl(0 0% 12%) 0%, hsl(0 0% 7%) 100%);
 
     /* Shadows */
-    --shadow-luxury: 0 20px 50px -12px hsl(0 0% 0% / 0.5);
-    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
-    --shadow-glow: 0 0 30px hsl(0 84% 50% / 0.3);
+    --shadow-luxury: 0 30px 60px -20px hsl(0 0% 0% / 0.6);
+    --shadow-card: 0 18px 40px -18px hsl(0 0% 0% / 0.35);
+    --shadow-red: 0 12px 36px -10px hsl(0 84% 50% / 0.45);
 
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .dark {
-    --background: 0 0% 8%;
+    --background: 0 0% 6%;
     --foreground: 0 0% 98%;
-
-    --card: 0 0% 12%;
+    --card: 0 0% 10%;
     --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 12%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 98%;
-
     --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 8%;
-
-    --secondary: 0 0% 15%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 0 0% 14%;
     --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
-
-    --accent: 0 84% 50%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 84% 50%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 0 74% 48%;
+    --accent-foreground: 0 0% 100%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 74% 48%;
   }
 }
 
@@ -99,5 +88,67 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Manrope", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Sora", system-ui, sans-serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: "Sora", system-ui, sans-serif;
+  }
+
+  /* Section eyebrow label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-accent;
+  }
+
+  .text-gradient-light {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 72%));
+  }
+
+  /* Dark premium surface */
+  .surface-dark {
+    background: var(--gradient-dark);
+  }
+
+  .luxury-card {
+    @apply rounded-2xl border border-border bg-card transition-all duration-500;
+    box-shadow: var(--shadow-card);
+  }
+
+  .luxury-card:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-luxury);
+  }
+
+  /* Subtle grid / noise texture overlay */
+  .texture-grid {
+    background-image:
+      linear-gradient(hsl(0 0% 100% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 100% / 0.03) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .red-glow {
+    background: var(--gradient-red-glow);
+  }
+}
+
+@layer utilities {
+  .container-narrow {
+    @apply mx-auto max-w-7xl px-5 sm:px-8;
+  }
+  .img-zoom {
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .img-zoom {
+    transform: scale(1.1);
   }
 }

@@ -22,40 +22,61 @@ const translations = {
     "nav.callNow": "Call Now",
 
     // Home Page
-    "home.hero.title": "Luxury Auto Body",
-    "home.hero.subtitle": "Restoration Experts",
-    "home.hero.description": "Professional collision repair and restoration with over 20 years of excellence",
-    "home.hero.cta": "Call for Free Estimate",
+    "home.hero.eyebrow": "Miami's Trusted Auto Body Shop",
+    "home.hero.title": "Luxury Auto Body Repair &",
+    "home.hero.subtitle": "Collision Experts in Miami",
+    "home.hero.description": "From bumper scratches to major collision work, we bring your vehicle back to factory condition — backed by honest estimates and clean, precise work.",
+    "home.hero.cta": "Call for a Free Estimate",
     "home.hero.viewServices": "View Our Services",
-    "home.hero.badges": "✓ Free Estimates ✓ Insurance Accepted ✓ Lifetime Warranty",
-    
-    "home.services.title": "Our Services",
-    "home.services.subtitle": "Complete auto body repair and restoration services",
+    "home.hero.badges": "Free Estimates  ·  Insurance Claims Welcome  ·  Lifetime Warranty",
+
+    // Trust bar
+    "home.trust.estimates": "Free Estimates",
+    "home.trust.insurance": "Insurance Claim Assistance",
+    "home.trust.collision": "Collision Repair",
+    "home.trust.paint": "Paint & Body Work",
+    "home.trust.miami": "Miami Based",
+
+    "home.services.eyebrow": "What We Do",
+    "home.services.title": "Repairs Done Right the First Time",
+    "home.services.subtitle": "Every job gets the same attention to detail — whether it's a daily driver or a weekend exotic.",
     "home.services.collision": "Collision Repair",
-    "home.services.collisionDesc": "Expert collision repair with state-of-the-art equipment and techniques.",
-    "home.services.paint": "Paint & Refinishing",
-    "home.services.paintDesc": "Professional paint matching and refinishing for a flawless finish.",
-    "home.services.dent": "Dent Removal",
-    "home.services.dentDesc": "Paintless dent repair and traditional dent removal services.",
-    "home.services.quick": "Quick Turnaround",
-    "home.services.quickDesc": "Fast and efficient service without compromising quality.",
-    "home.services.cta": "Get Free Estimate",
-    
+    "home.services.collisionDesc": "Structural and panel repair that restores your car's safety and factory lines after an accident.",
+    "home.services.paint": "Paint & Color Matching",
+    "home.services.paintDesc": "Computerized color matching and a controlled paint booth for a seamless, factory finish.",
+    "home.services.dent": "Dent & Scratch Repair",
+    "home.services.dentDesc": "Paintless dent removal and scratch repair that makes damage disappear.",
+    "home.services.quick": "Insurance Claim Help",
+    "home.services.quickDesc": "We deal directly with your insurer so the claim process is one less thing to worry about.",
+    "home.services.cta": "Get a Free Estimate",
+    "home.services.viewAll": "See All Services",
+
+    "home.beforeAfter.eyebrow": "Real Results",
     "home.beforeAfter.title": "Before & After",
-    "home.beforeAfter.subtitle": "See the transformation our expert team delivers",
-    
-    "home.whyChoose.title": "Why Choose Us",
-    "home.whyChoose.subtitle": "Excellence backed by experience",
+    "home.beforeAfter.subtitle": "Drag to see the difference our team makes on real Miami repairs.",
+    "home.beforeAfter.before": "Before",
+    "home.beforeAfter.after": "After",
+
+    "home.whyChoose.eyebrow": "By The Numbers",
+    "home.whyChoose.title": "Why Drivers Trust L&M",
+    "home.whyChoose.subtitle": "Two decades of bodywork, paint, and collision repair in Miami.",
     "home.whyChoose.cars": "Cars Repaired",
-    "home.whyChoose.years": "Years Experience",
+    "home.whyChoose.years": "Years in Miami",
     "home.whyChoose.satisfaction": "Customer Satisfaction",
     "home.whyChoose.technicians": "Expert Technicians",
-    
-    "home.testimonials.title": "What Our Clients Say",
-    "home.testimonials.subtitle": "Real reviews from real customers",
-    
+
+    "home.testimonials.eyebrow": "Customer Reviews",
+    "home.testimonials.title": "What Our Customers Say",
+    "home.testimonials.subtitle": "Real reviews from drivers across Miami.",
+
+    "home.finalCta.eyebrow": "Get Started Today",
+    "home.finalCta.title": "Need Your Vehicle Repaired?",
+    "home.finalCta.description": "Call today for a free estimate from L&M Luxury Auto Body Shop. No pressure, no hidden fees — just honest work.",
+    "home.finalCta.cta": "Call for a Free Estimate",
+    "home.finalCta.secondary": "Get Directions",
+
     "home.guarantee.title": "Our Guarantee",
-    "home.guarantee.description": "We stand behind our work with a lifetime warranty on all repairs. Your satisfaction is our priority.",
+    "home.guarantee.description": "We stand behind our work with a lifetime warranty on all repairs.",
     "home.guarantee.cta": "Get Your Free Estimate Today",
 
     // Services Page
@@ -200,6 +221,54 @@ const translations = {
     "cars.visit.subtitle": "Come see our current inventory in person. Schedule a test drive today!",
     "cars.visit.cta": "Call to Schedule",
 
+    // Testimonials (quotes)
+    "home.t1": "Got rear-ended on I-95 and L&M handled everything with my insurance. Car came back looking better than before the accident.",
+    "home.t2": "They color-matched the paint on my black sedan perfectly — you genuinely can't tell where the work was done.",
+    "home.t3": "Honest pricing and they actually finished when they said they would. Hard to find in Miami. Highly recommend.",
+    "home.t1.role": "Collision Repair, Brickell",
+    "home.t2.role": "Paint & Body, Miami Lakes",
+    "home.t3.role": "Bumper Repair, Hialeah",
+
+    // About extra
+    "about.hero.eyebrow": "Our Story",
+    "about.story.eyebrow": "Family Owned · Miami Based",
+    "about.values.eyebrow": "How We Work",
+    "about.values.precision": "Precision Work",
+    "about.values.precisionDesc": "We restore factory panel gaps, lines, and finishes — not just cover up the damage.",
+    "about.values.honest": "Honest Estimates",
+    "about.values.honestDesc": "Clear, written estimates with no surprise charges added at pickup.",
+    "about.values.paintMatch": "Quality Paint Matching",
+    "about.values.paintMatchDesc": "Computerized color matching for a finish that blends seamlessly with your car.",
+    "about.values.customerFirst": "Customer-First Service",
+    "about.values.customerFirstDesc": "We keep you updated through the whole repair and treat your car like our own.",
+    "about.cta.title": "Bring Your Car to People Who Care",
+    "about.cta.subtitle": "Stop by the shop or call for a free, no-pressure estimate.",
+
+    // Services extra
+    "services.intro.eyebrow": "Our Services",
+    "services.intro.title": "Complete Auto Body & Collision Care",
+    "services.intro.subtitle": "Every repair is handled in-house by technicians who treat your vehicle like their own.",
+    "services.bumper.title": "Bumper Repair",
+    "services.bumper.desc": "Cracked, scuffed, or hanging bumpers repaired and refinished to factory spec.",
+    "services.bumper.feature1": "Crack & scuff repair",
+    "services.bumper.feature2": "Bumper refinishing",
+    "services.bumper.feature3": "Sensor recalibration",
+    "services.bumper.feature4": "Full replacement",
+    "services.body.title": "Auto Body Repair",
+    "services.body.desc": "Panel, fender, and frame repair that brings your vehicle back to its original shape.",
+    "services.body.feature1": "Panel replacement",
+    "services.body.feature2": "Rust repair",
+    "services.body.feature3": "Frame straightening",
+    "services.body.feature4": "Welding & fabrication",
+
+    // Cars extra
+    "cars.intro.eyebrow": "Current Inventory",
+    "cars.why.eyebrow": "The L&M Promise",
+
+    // Contact extra
+    "contact.hero.eyebrow": "Get In Touch",
+    "contact.info.title": "Shop Information",
+
     // Footer
     "footer.company": "L&M Luxury",
     "footer.subtitle": "Auto Body Shop",
@@ -223,41 +292,63 @@ const translations = {
     "nav.callNow": "Llame Ahora",
 
     // Home Page
-    "home.hero.title": "Reparación de Carrocería",
-    "home.hero.subtitle": "de Lujo",
-    "home.hero.description": "Reparación profesional de colisiones y restauración con más de 20 años de excelencia",
-    "home.hero.cta": "Llame para Presupuesto Gratis",
+    "home.hero.eyebrow": "Taller de Carrocería de Confianza en Miami",
+    "home.hero.title": "Reparación de Carrocería de Lujo y",
+    "home.hero.subtitle": "Expertos en Colisiones en Miami",
+    "home.hero.description": "Desde rayones en el parachoques hasta trabajos mayores de colisión, devolvemos su vehículo a su condición de fábrica — con presupuestos honestos y trabajo limpio y preciso.",
+    "home.hero.cta": "Llame para un Presupuesto Gratis",
     "home.hero.viewServices": "Ver Nuestros Servicios",
-    "home.hero.badges": "✓ Presupuestos Gratis ✓ Se Acepta Seguro ✓ Garantía de Por Vida",
-    
-    "home.services.title": "Nuestros Servicios",
-    "home.services.subtitle": "Servicios completos de reparación y restauración de carrocería",
+    "home.hero.badges": "Presupuestos Gratis  ·  Aceptamos Seguros  ·  Garantía de Por Vida",
+
+    // Trust bar
+    "home.trust.estimates": "Presupuestos Gratis",
+    "home.trust.insurance": "Ayuda con Reclamos de Seguro",
+    "home.trust.collision": "Reparación de Colisiones",
+    "home.trust.paint": "Pintura y Carrocería",
+    "home.trust.miami": "Basados en Miami",
+
+    "home.services.eyebrow": "Lo Que Hacemos",
+    "home.services.title": "Reparaciones Bien Hechas a la Primera",
+    "home.services.subtitle": "Cada trabajo recibe la misma atención al detalle — ya sea un auto diario o un exótico de fin de semana.",
     "home.services.collision": "Reparación de Colisiones",
-    "home.services.collisionDesc": "Reparación experta de colisiones con equipo y técnicas de última generación.",
-    "home.services.paint": "Pintura y Refinamiento",
-    "home.services.paintDesc": "Igualación profesional de pintura y refinamiento para un acabado impecable.",
-    "home.services.dent": "Eliminación de Abolladuras",
-    "home.services.dentDesc": "Reparación de abolladuras sin pintura y servicios tradicionales de eliminación.",
-    "home.services.quick": "Entrega Rápida",
-    "home.services.quickDesc": "Servicio rápido y eficiente sin comprometer la calidad.",
+    "home.services.collisionDesc": "Reparación estructural y de paneles que restaura la seguridad y las líneas de fábrica tras un accidente.",
+    "home.services.paint": "Pintura e Igualación de Color",
+    "home.services.paintDesc": "Igualación de color computarizada y cabina de pintura controlada para un acabado de fábrica.",
+    "home.services.dent": "Abolladuras y Rayones",
+    "home.services.dentDesc": "Reparación de abolladuras sin pintura y de rayones que hace desaparecer el daño.",
+    "home.services.quick": "Ayuda con el Seguro",
+    "home.services.quickDesc": "Tratamos directamente con su aseguradora para que el reclamo sea una preocupación menos.",
     "home.services.cta": "Obtener Presupuesto Gratis",
-    
+    "home.services.viewAll": "Ver Todos los Servicios",
+
+    "home.beforeAfter.eyebrow": "Resultados Reales",
     "home.beforeAfter.title": "Antes y Después",
-    "home.beforeAfter.subtitle": "Vea la transformación que nuestro equipo experto entrega",
-    
-    "home.whyChoose.title": "Por Qué Elegirnos",
-    "home.whyChoose.subtitle": "Excelencia respaldada por experiencia",
+    "home.beforeAfter.subtitle": "Deslice para ver la diferencia que logra nuestro equipo en reparaciones reales de Miami.",
+    "home.beforeAfter.before": "Antes",
+    "home.beforeAfter.after": "Después",
+
+    "home.whyChoose.eyebrow": "En Números",
+    "home.whyChoose.title": "Por Qué Confían en L&M",
+    "home.whyChoose.subtitle": "Dos décadas de carrocería, pintura y reparación de colisiones en Miami.",
     "home.whyChoose.cars": "Autos Reparados",
-    "home.whyChoose.years": "Años de Experiencia",
+    "home.whyChoose.years": "Años en Miami",
     "home.whyChoose.satisfaction": "Satisfacción del Cliente",
     "home.whyChoose.technicians": "Técnicos Expertos",
-    
+
+    "home.testimonials.eyebrow": "Opiniones de Clientes",
     "home.testimonials.title": "Lo Que Dicen Nuestros Clientes",
-    "home.testimonials.subtitle": "Reseñas reales de clientes reales",
-    
+    "home.testimonials.subtitle": "Reseñas reales de conductores de todo Miami.",
+
+    "home.finalCta.eyebrow": "Comience Hoy",
+    "home.finalCta.title": "¿Necesita Reparar Su Vehículo?",
+    "home.finalCta.description": "Llame hoy para un presupuesto gratis de L&M Luxury Auto Body Shop. Sin presión, sin cargos ocultos — solo trabajo honesto.",
+    "home.finalCta.cta": "Llame para un Presupuesto Gratis",
+    "home.finalCta.secondary": "Cómo Llegar",
+
     "home.guarantee.title": "Nuestra Garantía",
-    "home.guarantee.description": "Respaldamos nuestro trabajo con una garantía de por vida en todas las reparaciones. Su satisfacción es nuestra prioridad.",
+    "home.guarantee.description": "Respaldamos nuestro trabajo con una garantía de por vida en todas las reparaciones.",
     "home.guarantee.cta": "Obtenga Su Presupuesto Gratis Hoy",
+
 
     // Services Page
     "services.hero.title": "Nuestros Servicios",
@@ -400,6 +491,54 @@ const translations = {
     "cars.visit.title": "Visite Nuestro Salón de Exhibición",
     "cars.visit.subtitle": "¡Venga a ver nuestro inventario actual en persona. Programe una prueba de manejo hoy!",
     "cars.visit.cta": "Llame para Programar",
+
+    // Testimonials (quotes)
+    "home.t1": "Me chocaron por detrás en la I-95 y L&M se encargó de todo con mi seguro. El auto quedó mejor que antes del accidente.",
+    "home.t2": "Igualaron perfectamente la pintura de mi sedán negro — de verdad no se nota dónde se hizo el trabajo.",
+    "home.t3": "Precios honestos y terminaron cuando dijeron que lo harían. Difícil de encontrar en Miami. Muy recomendado.",
+    "home.t1.role": "Reparación de Colisión, Brickell",
+    "home.t2.role": "Pintura y Carrocería, Miami Lakes",
+    "home.t3.role": "Reparación de Parachoques, Hialeah",
+
+    // About extra
+    "about.hero.eyebrow": "Nuestra Historia",
+    "about.story.eyebrow": "Negocio Familiar · Basado en Miami",
+    "about.values.eyebrow": "Cómo Trabajamos",
+    "about.values.precision": "Trabajo de Precisión",
+    "about.values.precisionDesc": "Restauramos las separaciones, líneas y acabados de fábrica — no solo cubrimos el daño.",
+    "about.values.honest": "Presupuestos Honestos",
+    "about.values.honestDesc": "Presupuestos claros y por escrito, sin cargos sorpresa al recoger el auto.",
+    "about.values.paintMatch": "Igualación de Pintura de Calidad",
+    "about.values.paintMatchDesc": "Igualación de color computarizada para un acabado que se integra a la perfección con su auto.",
+    "about.values.customerFirst": "Servicio Centrado en el Cliente",
+    "about.values.customerFirstDesc": "Lo mantenemos informado durante toda la reparación y tratamos su auto como si fuera nuestro.",
+    "about.cta.title": "Lleve Su Auto con Quienes lo Cuidan",
+    "about.cta.subtitle": "Pase por el taller o llame para un presupuesto gratis y sin presión.",
+
+    // Services extra
+    "services.intro.eyebrow": "Nuestros Servicios",
+    "services.intro.title": "Cuidado Completo de Carrocería y Colisiones",
+    "services.intro.subtitle": "Cada reparación se realiza internamente por técnicos que tratan su vehículo como el suyo propio.",
+    "services.bumper.title": "Reparación de Parachoques",
+    "services.bumper.desc": "Parachoques agrietados, rayados o sueltos reparados y refinados a especificación de fábrica.",
+    "services.bumper.feature1": "Reparación de grietas y rayones",
+    "services.bumper.feature2": "Refinamiento de parachoques",
+    "services.bumper.feature3": "Recalibración de sensores",
+    "services.bumper.feature4": "Reemplazo completo",
+    "services.body.title": "Reparación de Carrocería",
+    "services.body.desc": "Reparación de paneles, guardabarros y chasis que devuelve su vehículo a su forma original.",
+    "services.body.feature1": "Reemplazo de paneles",
+    "services.body.feature2": "Reparación de óxido",
+    "services.body.feature3": "Enderezamiento de chasis",
+    "services.body.feature4": "Soldadura y fabricación",
+
+    // Cars extra
+    "cars.intro.eyebrow": "Inventario Actual",
+    "cars.why.eyebrow": "La Promesa de L&M",
+
+    // Contact extra
+    "contact.hero.eyebrow": "Contáctenos",
+    "contact.info.title": "Información del Taller",
 
     // Footer
     "footer.company": "L&M Luxury",

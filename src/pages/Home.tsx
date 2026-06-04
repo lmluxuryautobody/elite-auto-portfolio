@@ -1,155 +1,191 @@
-import { Phone, CheckCircle, Star, Shield, Clock, Award } from "lucide-react";
+import { Phone, ArrowRight, Shield, PaintBucket, Sparkles, FileCheck, Star, CheckCircle2, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import CounterStat from "@/components/CounterStat";
+import BeforeAfter from "@/components/BeforeAfter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-car.jpg";
-import beforeAfterImage from "@/assets/before-after.jpg";
+import collisionImg from "@/assets/service-collision.jpg";
+import paintImg from "@/assets/service-paint.jpg";
+import dentImg from "@/assets/service-dent.jpg";
+import shopImg from "@/assets/about-shop.jpg";
+import beforeImg from "@/assets/before.jpg";
+import afterImg from "@/assets/after.jpg";
+import ctaBg from "@/assets/cta-bg.jpg";
+
+const PHONE = "tel:+17869735376";
 
 const Home = () => {
   const { t } = useLanguage();
-  
+
+  const trust = [
+    t("home.trust.estimates"),
+    t("home.trust.insurance"),
+    t("home.trust.collision"),
+    t("home.trust.paint"),
+    t("home.trust.miami"),
+  ];
+
   const services = [
-    {
-      icon: Shield,
-      title: t("home.services.collision"),
-      description: t("home.services.collisionDesc"),
-    },
-    {
-      icon: Award,
-      title: t("home.services.paint"),
-      description: t("home.services.paintDesc"),
-    },
-    {
-      icon: CheckCircle,
-      title: t("home.services.dent"),
-      description: t("home.services.dentDesc"),
-    },
-    {
-      icon: Clock,
-      title: t("home.services.quick"),
-      description: t("home.services.quickDesc"),
-    },
+    { icon: Shield, title: t("home.services.collision"), desc: t("home.services.collisionDesc"), img: collisionImg },
+    { icon: PaintBucket, title: t("home.services.paint"), desc: t("home.services.paintDesc"), img: paintImg },
+    { icon: Sparkles, title: t("home.services.dent"), desc: t("home.services.dentDesc"), img: dentImg },
+    { icon: FileCheck, title: t("home.services.quick"), desc: t("home.services.quickDesc"), img: shopImg },
   ];
 
   const testimonials = [
-    {
-      name: "John Martinez",
-      text: "Incredible work! My car looks brand new. The attention to detail is outstanding.",
-      rating: 5,
-    },
-    {
-      name: "Sarah Johnson",
-      text: "Best auto body shop in the area. Professional, honest, and the quality is unmatched.",
-      rating: 5,
-    },
-    {
-      name: "Michael Chen",
-      text: "They exceeded my expectations. My luxury vehicle was treated with the care it deserves.",
-      rating: 5,
-    },
+    { name: "John Martinez", role: t("home.t1.role"), text: t("home.t1") },
+    { name: "Sarah Johnson", role: t("home.t2.role"), text: t("home.t2") },
+    { name: "Michael Chen", role: t("home.t3.role"), text: t("home.t3") },
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary/90" />
-        </div>
+    <div className="overflow-hidden">
+      {/* ===== Hero ===== */}
+      <section className="relative min-h-screen flex items-center">
+        <img
+          src={heroImage}
+          alt="Luxury car in the L&M auto body shop"
+          className="absolute inset-0 h-full w-full object-cover"
+          width={1920}
+          height={1080}
+        />
+        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+        <div className="absolute inset-0 red-glow opacity-70" />
 
-        <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            {t("home.hero.title")}
-            <br />
-            <span className="text-accent">{t("home.hero.subtitle")}</span>
-          </h1>
-          <p className="text-lg md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-            {t("home.hero.description")}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up md:w-full w-max m-auto">
-            <a href="tel:+17869735376">
-              <Button variant="luxury" size="xl" className="">
-                <Phone className="h-6 w-6" />
-                {t("home.hero.cta")}
-              </Button>
-            </a>
-            <Button variant="luxury-outline" size="xl" className="border-white text-white hover:bg-white hover:text-accent">
-              {t("home.hero.viewServices")}
-            </Button>
+        <div className="container-narrow relative z-10 pt-28 pb-20">
+          <div className="max-w-3xl">
+            <span className="eyebrow animate-fade-in">
+              <span className="h-px w-8 bg-accent" />
+              {t("home.hero.eyebrow")}
+            </span>
+            <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] text-white sm:text-6xl lg:text-7xl animate-fade-in">
+              {t("home.hero.title")}{" "}
+              <span className="text-gradient-light">{t("home.hero.subtitle")}</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg text-white/75 leading-relaxed animate-fade-in">
+              {t("home.hero.description")}
+            </p>
+            <div className="mt-9 flex flex-col sm:flex-row gap-4 animate-slide-up">
+              <a href={PHONE}>
+                <Button variant="luxury" size="xl" className="w-full sm:w-auto">
+                  <Phone className="h-5 w-5" />
+                  {t("home.hero.cta")}
+                </Button>
+              </a>
+              <Link to="/services" onClick={() => window.scrollTo(0, 0)}>
+                <Button variant="luxury-light" size="xl" className="w-full sm:w-auto">
+                  {t("home.hero.viewServices")}
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
+            <p className="mt-7 text-sm tracking-wide text-white/55 animate-fade-in">
+              {t("home.hero.badges")}
+            </p>
           </div>
-          <p className="text-white mt-6 text-xs md:text-lg">
-            {t("home.hero.badges")}
-          </p>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">{t("home.services.title")}</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              {t("home.services.subtitle")}
-            </p>
+      {/* ===== Trust bar ===== */}
+      <section className="surface-dark border-y border-white/10">
+        <div className="container-narrow">
+          <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 py-6 text-sm font-semibold text-white/75">
+            {trust.map((item) => (
+              <li key={item} className="flex items-center gap-2.5">
+                <CheckCircle2 className="h-4 w-4 text-accent" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ===== Services ===== */}
+      <section className="py-24 bg-background">
+        <div className="container-narrow">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-14">
+            <div className="max-w-2xl">
+              <span className="eyebrow">{t("home.services.eyebrow")}</span>
+              <h2 className="mt-4 font-display text-3xl font-bold sm:text-5xl">
+                {t("home.services.title")}
+              </h2>
+            </div>
+            <p className="max-w-md text-muted-foreground">{t("home.services.subtitle")}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className="p-8 hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent animate-fade-in flex flex-col"
-                style={{ animationDelay: `${index * 100}ms` }}
+          <div className="grid gap-6 sm:grid-cols-2">
+            {services.map((s, i) => (
+              <article
+                key={s.title}
+                className="group relative overflow-hidden rounded-2xl shadow-card animate-fade-in"
+                style={{ animationDelay: `${i * 90}ms` }}
               >
-                <service.icon className="h-12 w-12 text-accent mb-4" />
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground mb-6 flex-grow">{service.description}</p>
-                <a href="tel:+17869735376" className="mt-auto">
-                  <Button variant="luxury" size="sm" className="w-full border border-accent text-accent bg-white">
-                    <Phone className="h-4 w-4" />
-                    {t("home.services.cta")}
-                  </Button>
-                </a>
-              </Card>
+                <div className="absolute inset-0">
+                  <img src={s.img} alt={s.title} loading="lazy" className="img-zoom h-full w-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
+                </div>
+                <div className="relative flex min-h-[22rem] flex-col justify-end p-8">
+                  <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/90 text-white shadow-red">
+                    <s.icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="font-display text-2xl font-bold text-white">{s.title}</h3>
+                  <p className="mt-2 text-sm text-white/70">{s.desc}</p>
+                  <a href={PHONE} className="mt-6">
+                    <Button variant="luxury" size="sm">
+                      <Phone className="h-4 w-4" />
+                      {t("home.services.cta")}
+                    </Button>
+                  </a>
+                </div>
+              </article>
             ))}
           </div>
+
+          <div className="mt-12 text-center">
+            <Link to="/services" onClick={() => window.scrollTo(0, 0)}>
+              <Button variant="luxury-outline" size="lg">
+                {t("home.services.viewAll")}
+                <ArrowRight className="h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Before & After Section */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">{t("home.beforeAfter.title")}</h2>
-            <p className="text-xl text-muted-foreground">
-              {t("home.beforeAfter.subtitle")}
-            </p>
+      {/* ===== Before & After ===== */}
+      <section className="relative py-24 surface-dark text-white">
+        <div className="absolute inset-0 texture-grid opacity-30" />
+        <div className="container-narrow relative">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <span className="eyebrow">{t("home.beforeAfter.eyebrow")}</span>
+            <h2 className="mt-4 font-display text-3xl font-bold sm:text-5xl">
+              {t("home.beforeAfter.title")}
+            </h2>
+            <p className="mt-4 text-white/65">{t("home.beforeAfter.subtitle")}</p>
           </div>
-
-          <div className="max-w-5xl mx-auto">
-            <img
-              src={beforeAfterImage}
-              alt="Before and after car repair"
-              className="w-full rounded-lg shadow-2xl animate-scale-in"
+          <div className="mx-auto max-w-4xl">
+            <BeforeAfter
+              before={beforeImg}
+              after={afterImg}
+              beforeLabel={t("home.beforeAfter.before")}
+              afterLabel={t("home.beforeAfter.after")}
             />
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">{t("home.whyChoose.title")}</h2>
-            <p className="text-xl text-white/80">{t("home.whyChoose.subtitle")}</p>
+      {/* ===== Why choose / counters ===== */}
+      <section className="py-24 bg-background">
+        <div className="container-narrow">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <span className="eyebrow">{t("home.whyChoose.eyebrow")}</span>
+            <h2 className="mt-4 font-display text-3xl font-bold sm:text-5xl">
+              {t("home.whyChoose.title")}
+            </h2>
+            <p className="mt-4 text-muted-foreground">{t("home.whyChoose.subtitle")}</p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-2 gap-10 lg:grid-cols-4">
             <CounterStat end={5000} suffix="+" label={t("home.whyChoose.cars")} />
             <CounterStat end={20} suffix="+" label={t("home.whyChoose.years")} />
             <CounterStat end={98} suffix="%" label={t("home.whyChoose.satisfaction")} />
@@ -158,48 +194,71 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">{t("home.testimonials.title")}</h2>
-            <p className="text-xl text-muted-foreground">{t("home.testimonials.subtitle")}</p>
+      {/* ===== Testimonials ===== */}
+      <section className="py-24 bg-secondary">
+        <div className="container-narrow">
+          <div className="mx-auto mb-14 max-w-2xl text-center">
+            <span className="eyebrow">{t("home.testimonials.eyebrow")}</span>
+            <h2 className="mt-4 font-display text-3xl font-bold sm:text-5xl">
+              {t("home.testimonials.title")}
+            </h2>
+            <p className="mt-4 text-muted-foreground">{t("home.testimonials.subtitle")}</p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className="p-8 hover:shadow-2xl transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
+          <div className="grid gap-6 md:grid-cols-3">
+            {testimonials.map((tm, i) => (
+              <figure
+                key={tm.name}
+                className="luxury-card flex flex-col p-8 animate-fade-in"
+                style={{ animationDelay: `${i * 90}ms` }}
               >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <div className="mb-4 flex gap-1">
+                  {[...Array(5)].map((_, s) => (
+                    <Star key={s} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
-                <p className="font-semibold">{testimonial.name}</p>
-              </Card>
+                <blockquote className="flex-grow text-foreground/80 leading-relaxed">
+                  "{tm.text}"
+                </blockquote>
+                <figcaption className="mt-6 border-t border-border pt-4">
+                  <p className="font-display font-bold">{tm.name}</p>
+                  <p className="text-sm text-accent">{tm.role}</p>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Guarantee Section */}
-      <section className="py-20 bg-gradient-to-r from-accent to-accent/80 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <Shield className="h-20 w-20 mx-auto mb-6 animate-scale-in" />
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t("home.guarantee.title")}</h2>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            {t("home.guarantee.description")}
-          </p>
-          <a href="tel:+17869735376">
-            <Button variant="luxury-outline" size="xl" className="border-white text-white hover:bg-white hover:text-accent">
-              <Phone className="h-6 w-6" />
-              {t("home.guarantee.cta")}
-            </Button>
-          </a>
+      {/* ===== Final CTA ===== */}
+      <section className="relative py-28 text-white">
+        <img src={ctaBg} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/50" />
+        <div className="container-narrow relative">
+          <div className="max-w-2xl">
+            <span className="eyebrow">{t("home.finalCta.eyebrow")}</span>
+            <h2 className="mt-4 font-display text-4xl font-extrabold sm:text-6xl">
+              {t("home.finalCta.title")}
+            </h2>
+            <p className="mt-5 text-lg text-white/75">{t("home.finalCta.description")}</p>
+            <div className="mt-9 flex flex-col sm:flex-row gap-4">
+              <a href={PHONE}>
+                <Button variant="luxury" size="xl" className="w-full sm:w-auto">
+                  <Phone className="h-5 w-5" />
+                  {t("home.finalCta.cta")}
+                </Button>
+              </a>
+              <a
+                href="https://maps.google.com/?q=2456+NW+77th+Terrace+Miami+FL+33147"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="luxury-light" size="xl" className="w-full sm:w-auto">
+                  <MapPin className="h-5 w-5" />
+                  {t("home.finalCta.secondary")}
+                </Button>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
