@@ -1,253 +1,186 @@
-import { Phone, Gauge, Calendar, MapPin, CheckCircle, Shield, Award } from "lucide-react";
+import { Phone, Gauge, Calendar, CheckCircle2, ShieldCheck, FileText, Award, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import PageHero from "@/components/PageHero";
 import { useLanguage } from "@/contexts/LanguageContext";
+import heroImage from "@/assets/hero-car.jpg";
+import ctaBg from "@/assets/cta-bg.jpg";
+
+const PHONE = "tel:+17869735376";
 
 const CarsForSale = () => {
   const { t } = useLanguage();
 
   const cars = [
-    {
-      year: 2020,
-      make: "Mercedes-Benz",
-      model: "E-Class",
-      price: "$45,900",
-      mileage: "32,000",
+    { year: 2020, make: "Mercedes-Benz", model: "E-Class", price: "$45,900", mileage: "32,000", condition: "Excellent",
       features: ["Premium Package", "Navigation", "Leather Seats", "Sunroof"],
-      condition: "Excellent",
-      images: [
-        { title: "Front View", color: "from-accent/20 to-primary/20" },
-        { title: "Interior", color: "from-primary/20 to-accent/20" },
-        { title: "Side View", color: "from-accent/30 to-primary/10" }
-      ]
-    },
-    {
-      year: 2019,
-      make: "BMW",
-      model: "5 Series",
-      price: "$42,500",
-      mileage: "28,500",
+      images: ["Front View", "Interior", "Side View"] },
+    { year: 2019, make: "BMW", model: "5 Series", price: "$42,500", mileage: "28,500", condition: "Like New",
       features: ["Sport Package", "Premium Sound", "Heated Seats", "Backup Camera"],
-      condition: "Like New",
-      images: [
-        { title: "Front View", color: "from-blue-500/20 to-primary/20" },
-        { title: "Interior", color: "from-primary/20 to-blue-500/20" },
-        { title: "Rear View", color: "from-blue-500/30 to-primary/10" }
-      ]
-    },
-    {
-      year: 2021,
-      make: "Audi",
-      model: "A6",
-      price: "$48,900",
-      mileage: "24,000",
+      images: ["Front View", "Interior", "Rear View"] },
+    { year: 2021, make: "Audi", model: "A6", price: "$48,900", mileage: "24,000", condition: "Excellent",
       features: ["Quattro AWD", "Virtual Cockpit", "Premium Plus", "Adaptive Cruise"],
-      condition: "Excellent",
-      images: [
-        { title: "Front View", color: "from-accent/20 to-primary/20" },
-        { title: "Dashboard", color: "from-primary/20 to-accent/20" },
-        { title: "Profile", color: "from-accent/30 to-primary/10" }
-      ]
-    },
-    {
-      year: 2018,
-      make: "Lexus",
-      model: "ES 350",
-      price: "$35,900",
-      mileage: "38,000",
+      images: ["Front View", "Dashboard", "Profile"] },
+    { year: 2018, make: "Lexus", model: "ES 350", price: "$35,900", mileage: "38,000", condition: "Very Good",
       features: ["Luxury Package", "Mark Levinson Audio", "Heated/Cooled Seats", "Lane Keep"],
-      condition: "Very Good",
-      images: [
-        { title: "Front", color: "from-gray-400/20 to-primary/20" },
-        { title: "Interior", color: "from-primary/20 to-gray-400/20" },
-        { title: "Side", color: "from-gray-400/30 to-primary/10" }
-      ]
-    },
-    {
-      year: 2020,
-      make: "Tesla",
-      model: "Model 3",
-      price: "$39,900",
-      mileage: "18,000",
+      images: ["Front", "Interior", "Side"] },
+    { year: 2020, make: "Tesla", model: "Model 3", price: "$39,900", mileage: "18,000", condition: "Excellent",
       features: ["Long Range", "Autopilot", "Premium Interior", "Supercharging"],
-      condition: "Excellent",
-      images: [
-        { title: "Front View", color: "from-accent/20 to-primary/20" },
-        { title: "Screen", color: "from-primary/20 to-accent/20" },
-        { title: "Charging", color: "from-accent/30 to-primary/10" }
-      ]
-    },
-    {
-      year: 2019,
-      make: "Porsche",
-      model: "Macan",
-      price: "$52,900",
-      mileage: "26,000",
+      images: ["Front View", "Screen", "Charging"] },
+    { year: 2019, make: "Porsche", model: "Macan", price: "$52,900", mileage: "26,000", condition: "Like New",
       features: ["Sport Chrono", "PASM Suspension", "Panoramic Roof", "Bose Audio"],
-      condition: "Like New",
-      images: [
-        { title: "Front", color: "from-red-500/20 to-primary/20" },
-        { title: "Cockpit", color: "from-primary/20 to-red-500/20" },
-        { title: "Rear", color: "from-red-500/30 to-primary/10" }
-      ]
-    },
+      images: ["Front", "Cockpit", "Rear"] },
+  ];
+
+  const why = [
+    { icon: ShieldCheck, title: t("cars.why.inspected"), desc: t("cars.why.inspectedDesc") },
+    { icon: FileText, title: t("cars.why.history"), desc: t("cars.why.historyDesc") },
+    { icon: Award, title: t("cars.why.guarantee"), desc: t("cars.why.guaranteeDesc") },
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-24 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">{t("cars.hero.title")}</h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8">
-              {t("cars.hero.subtitle")}
-            </p>
-            <a href="tel:+17869735376">
-              <Button variant="luxury" size="xl">
-                <Phone className="h-6 w-6" />
-                {t("cars.hero.cta")}
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
+    <div className="overflow-hidden">
+      <PageHero
+        eyebrow={t("cars.intro.eyebrow")}
+        title={t("cars.hero.title")}
+        subtitle={t("cars.hero.subtitle")}
+        image={heroImage}
+      >
+        <a href={PHONE}>
+          <Button variant="luxury" size="xl">
+            <Phone className="h-5 w-5" />
+            {t("cars.hero.cta")}
+          </Button>
+        </a>
+      </PageHero>
 
-      {/* Cars Grid */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Inventory */}
+      <section className="py-24 bg-background">
+        <div className="container-narrow">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {cars.map((car, index) => (
-              <Card
+              <article
                 key={index}
-                className="overflow-hidden hover:shadow-2xl transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="luxury-card group flex flex-col overflow-hidden animate-fade-in"
+                style={{ animationDelay: `${index * 80}ms` }}
               >
-                {/* Swipeable Image Carousel */}
-                <Carousel className="w-full">
-                  <CarouselContent>
-                    {car.images.map((image, imgIndex) => (
-                      <CarouselItem key={imgIndex}>
-                        <div className={`h-48 bg-gradient-to-br ${image.color} flex items-center justify-center`}>
-                          <div className="text-center">
-                            <p className="text-3xl font-bold text-accent">
-                              {car.year} {car.make}
-                            </p>
-                            <p className="text-xl text-muted-foreground">{car.model}</p>
-                            <p className="text-sm text-muted-foreground mt-2">{image.title}</p>
+                <div className="relative">
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {car.images.map((title, i) => (
+                        <CarouselItem key={i}>
+                          <div className="relative flex h-52 items-center justify-center surface-dark">
+                            <div className="absolute inset-0 texture-grid opacity-30" />
+                            <div className="relative text-center">
+                              <p className="font-display text-2xl font-bold text-white">
+                                {car.year} {car.make}
+                              </p>
+                              <p className="text-white/60">{car.model}</p>
+                              <p className="mt-2 text-xs uppercase tracking-widest text-accent">{title}</p>
+                            </div>
                           </div>
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="left-2" />
-                  <CarouselNext className="right-2" />
-                </Carousel>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-3 border-none bg-white/90 text-primary" />
+                    <CarouselNext className="right-3 border-none bg-white/90 text-primary" />
+                  </Carousel>
+                  <Badge className="absolute left-4 top-4 bg-accent text-white hover:bg-accent">
+                    {car.condition}
+                  </Badge>
+                </div>
 
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-4">
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex items-start justify-between gap-3">
                     <div>
-                      <h3 className="text-2xl font-bold mb-1">
-                        {car.year} {car.make}
-                      </h3>
-                      <p className="text-lg text-muted-foreground">{car.model}</p>
+                      <h3 className="font-display text-xl font-bold">{car.year} {car.make}</h3>
+                      <p className="text-muted-foreground">{car.model}</p>
                     </div>
-                    <Badge variant="secondary" className="text-lg px-3 py-1">
-                      {car.condition}
-                    </Badge>
+                    <p className="font-display text-2xl font-extrabold text-accent">{car.price}</p>
                   </div>
 
-                  <div className="text-3xl font-bold text-accent mb-4">{car.price}</div>
-
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-muted-foreground">
-                      <Gauge className="h-5 w-5 mr-2 text-accent" />
-                      <span>{car.mileage} {t("cars.mileage")}</span>
-                    </div>
-                    <div className="flex items-center text-muted-foreground">
-                      <Calendar className="h-5 w-5 mr-2 text-accent" />
-                      <span>{car.year} {t("cars.modelYear")}</span>
-                    </div>
+                  <div className="mt-4 flex gap-6 text-sm text-muted-foreground">
+                    <span className="flex items-center gap-2">
+                      <Gauge className="h-4 w-4 text-accent" /> {car.mileage} {t("cars.mileage")}
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <Calendar className="h-4 w-4 text-accent" /> {car.year}
+                    </span>
                   </div>
 
-                  <div className="border-t pt-4 mb-4">
-                    <p className="font-semibold mb-2">{t("cars.features")}</p>
-                    <ul className="space-y-1">
-                      {car.features.map((feature, i) => (
-                        <li key={i} className="flex items-start text-sm">
-                          <CheckCircle className="h-4 w-4 text-accent mr-2 mt-0.5 flex-shrink-0" />
-                          <span>{feature}</span>
+                  <div className="mt-5 border-t border-border pt-4">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                      {t("cars.features")}
+                    </p>
+                    <ul className="grid grid-cols-2 gap-2">
+                      {car.features.map((f) => (
+                        <li key={f} className="flex items-start gap-2 text-sm">
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
+                          <span>{f}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <a href="tel:+17869735376" className="block">
+                  <a href={PHONE} className="mt-6 block">
                     <Button variant="luxury" size="lg" className="w-full">
                       <Phone className="h-5 w-5" />
                       {t("cars.callToInquire")}
                     </Button>
                   </a>
                 </div>
-              </Card>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Buy From Us */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">{t("cars.why.title")}</h2>
-            <p className="text-xl text-muted-foreground">
-              {t("cars.why.subtitle")}
-            </p>
+      {/* Why buy */}
+      <section className="relative py-24 surface-dark text-white">
+        <div className="absolute inset-0 texture-grid opacity-30" />
+        <div className="container-narrow relative">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <span className="eyebrow">{t("cars.why.eyebrow")}</span>
+            <h2 className="mt-4 font-display text-3xl font-bold sm:text-5xl">{t("cars.why.title")}</h2>
+            <p className="mt-4 text-white/65">{t("cars.why.subtitle")}</p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 animate-fade-in">
-              <Shield className="h-16 w-16 text-accent mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-3">{t("cars.why.inspected")}</h3>
-              <p className="text-muted-foreground">
-                {t("cars.why.inspectedDesc")}
-              </p>
-            </Card>
-
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 animate-fade-in" style={{ animationDelay: "100ms" }}>
-              <Award className="h-16 w-16 text-accent mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-3">{t("cars.why.history")}</h3>
-              <p className="text-muted-foreground">
-                {t("cars.why.historyDesc")}
-              </p>
-            </Card>
-
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 animate-fade-in" style={{ animationDelay: "200ms" }}>
-              <CheckCircle className="h-16 w-16 text-accent mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-3">{t("cars.why.guarantee")}</h3>
-              <p className="text-muted-foreground">
-                {t("cars.why.guaranteeDesc")}
-              </p>
-            </Card>
+          <div className="grid gap-6 md:grid-cols-3">
+            {why.map((w, i) => (
+              <div
+                key={w.title}
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 text-center transition-colors hover:border-accent/50 animate-fade-in"
+                style={{ animationDelay: `${i * 90}ms` }}
+              >
+                <span className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-accent/15 text-accent">
+                  <w.icon className="h-7 w-7" />
+                </span>
+                <h3 className="font-display text-xl font-bold">{w.title}</h3>
+                <p className="mt-3 text-sm text-white/60">{w.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-accent to-accent/80 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <MapPin className="h-16 w-16 mx-auto mb-6" />
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t("cars.visit.title")}</h2>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            {t("cars.visit.subtitle")}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+17869735376">
-              <Button variant="luxury-outline" size="xl" className="border-white text-white hover:bg-white hover:text-accent">
-                <Phone className="h-6 w-6" />
+      {/* CTA */}
+      <section className="relative py-24 text-white">
+        <img src={ctaBg} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/40" />
+        <div className="container-narrow relative max-w-2xl">
+          <h2 className="font-display text-3xl font-extrabold sm:text-5xl">{t("cars.visit.title")}</h2>
+          <p className="mt-5 text-lg text-white/75">{t("cars.visit.subtitle")}</p>
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <a href={PHONE}>
+              <Button variant="luxury" size="xl" className="w-full sm:w-auto">
+                <Phone className="h-5 w-5" />
                 {t("cars.visit.cta")}
+              </Button>
+            </a>
+            <a href="https://maps.google.com/?q=2456+NW+77th+Terrace+Miami+FL+33147" target="_blank" rel="noopener noreferrer">
+              <Button variant="luxury-light" size="xl" className="w-full sm:w-auto">
+                <MapPin className="h-5 w-5" />
+                {t("home.finalCta.secondary")}
               </Button>
             </a>
           </div>
