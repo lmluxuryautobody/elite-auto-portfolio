@@ -28,7 +28,7 @@ const translations = {
     "home.hero.description": "From bumper scratches to major collision work, we bring your vehicle back to factory condition — backed by honest estimates and clean, precise work.",
     "home.hero.cta": "Call for a Free Estimate",
     "home.hero.viewServices": "View Our Services",
-    "home.hero.badges": "Free Estimates  ·  Insurance Claims Welcome  ·  Lifetime Warranty",
+    "home.hero.badges": "Free Estimates  ·  Insurance Claims Welcome  ·  Warranty Guaranteed",
 
     // Trust bar
     "home.trust.estimates": "Free Estimates",
@@ -76,7 +76,7 @@ const translations = {
     "home.finalCta.secondary": "Get Directions",
 
     "home.guarantee.title": "Our Guarantee",
-    "home.guarantee.description": "We stand behind our work with a lifetime warranty on all repairs.",
+    "home.guarantee.description": "We stand behind our work with a warranty guaranteed on all repairs.",
     "home.guarantee.cta": "Get Your Free Estimate Today",
 
     // Services Page
@@ -298,7 +298,7 @@ const translations = {
     "home.hero.description": "Desde rayones en el parachoques hasta trabajos mayores de colisión, devolvemos su vehículo a su condición de fábrica — con presupuestos honestos y trabajo limpio y preciso.",
     "home.hero.cta": "Llame para un Presupuesto Gratis",
     "home.hero.viewServices": "Ver Nuestros Servicios",
-    "home.hero.badges": "Presupuestos Gratis  ·  Aceptamos Seguros  ·  Garantía de Por Vida",
+    "home.hero.badges": "Presupuestos Gratis  ·  Aceptamos Seguros  ·  Garantía Garantizada",
 
     // Trust bar
     "home.trust.estimates": "Presupuestos Gratis",
@@ -346,7 +346,7 @@ const translations = {
     "home.finalCta.secondary": "Cómo Llegar",
 
     "home.guarantee.title": "Nuestra Garantía",
-    "home.guarantee.description": "Respaldamos nuestro trabajo con una garantía de por vida en todas las reparaciones.",
+    "home.guarantee.description": "Respaldamos nuestro trabajo con una garantía garantizada en todas las reparaciones.",
     "home.guarantee.cta": "Obtenga Su Presupuesto Gratis Hoy",
 
 
