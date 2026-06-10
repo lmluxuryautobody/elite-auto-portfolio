@@ -1,6 +1,5 @@
 import { Target, FileText, Droplets, HeartHandshake, Phone, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import CounterStat from "@/components/CounterStat";
 import PageHero from "@/components/PageHero";
 import { useLanguage } from "@/contexts/LanguageContext";
 import aboutImage from "@/assets/about-shop.jpg";
@@ -60,17 +59,6 @@ const About = () => {
               </Button>
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="relative py-20 surface-dark text-white">
-        <div className="absolute inset-0 texture-grid opacity-30" />
-        <div className="container-narrow relative grid grid-cols-2 gap-10 lg:grid-cols-4">
-          <CounterStat light end={22} suffix="+" label={t("about.stats.years")} />
-          <CounterStat light end={5000} suffix="+" label={t("about.stats.customers")} />
-          <CounterStat light end={8500} suffix="+" label={t("about.stats.vehicles")} />
-          <CounterStat light end={15} suffix="+" label={t("about.stats.technicians")} />
         </div>
       </section>
 
